@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -10,14 +11,15 @@ public class Character {
     private int health;
     private int maxHp;
     private int currentMana;
+    public boolean isAlive = true;
 
-    public Character(String name, int maxHp, int manaPool, int health){
+    public Character(String name, int maxHp, int manaPool){
         setName(name);
         setManaPool(manaPool);
-        setHealth(health);
+        setmaxHp(maxHp);
     }
-    public void setHealth(int health){
-        this.health = health;
+    public void setmaxHp(int maxHp){
+        this.maxHp = maxHp;
     }
     public void setName(String name){
         this.name = name;
@@ -55,7 +57,17 @@ public class Character {
             }
         }
     }
+    public void takeDamage(int damage){
+        this.health -= damage;
+        System.out.println(name + " took " + damage + " damage!");
 
+        if (this.health <= 0) {
+            this.isAlive = false;
+            System.out.println(name + " has been defeated!");
+        } else {
+            System.out.println(name + " has " + this.health + " health remaining.");
+        }
+    }
 
 
 

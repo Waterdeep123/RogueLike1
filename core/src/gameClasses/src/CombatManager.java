@@ -1,18 +1,25 @@
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class CombatManager {
-    private List<Character> combatants = new ArrayList<>();
+    private List<Object> combatants = new ArrayList<Object>();
+    private ArrayList<Enemy> allEnemies = new ArrayList<Enemy>();
     // ... other turn management logic ...
 
-    public void startGame() {
-        Character player = new Character("Player", 100);
-        Character enemy = new Character("Enemy", 50);
+    public CombatManager(Character player){
+        startGame(player);
+    }
+    public void startGame(Character player) {
         combatants.add(player);
-        combatants.add(enemy);
+        initEnemies();
+        Enemy randomEnemy = randomCommonEnemy();
+
+        combatants.add(randomEnemy);
 
         // Apply a poison effect to the enemy (5 damage per turn for 3 turns)
-        enemy.addEffect(new PoisonEffect(enemy, 5, 3));
+
     }
 
     public void nextTurn() {
@@ -25,4 +32,18 @@ public class CombatManager {
             }
         }
     }
+
+    public void initEnemies(){
+        Enemy Spider = new Enemy("Giant Spider", 10);
+        allEnemies.add(Spider);
+        Enemy Zombie = new Enemy("Zombie Warrior", 20);
+        allEnemies.add(Zombie);
+    }
+    public Enemy randomCommonEnemy(){
+        Random rand = new Random();
+        int randomAction = rand.nextInt(allEnemies.size());
+        return allEnemies.get(randomAction);
+    }
+
+
 }

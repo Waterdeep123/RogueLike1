@@ -1,3 +1,4 @@
+
 public class PoisonEffect extends StatusEffect {
     public PoisonEffect(Character target, int damagePerTurn, int duration) {
         super(target, damagePerTurn, duration);

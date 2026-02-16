@@ -1,3 +1,4 @@
+
 public abstract class StatusEffect {
     protected int turnsRemaining;
     protected int damagePerTurn;
