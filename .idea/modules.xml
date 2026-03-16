@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/core/src/gameClasses/gameClasses.iml" filepath="$PROJECT_DIR$/core/src/gameClasses/gameClasses.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RogueLike1.iml" filepath="$PROJECT_DIR$/RogueLike1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/src/main/java/classesForGame/temp/src.iml" filepath="$PROJECT_DIR$/core/src/main/java/classesForGame/temp/src.iml" />
     </modules>
   </component>
 </project>
